@@ -7,7 +7,7 @@ export class LastRankingLoaderService implements LastRankingLoader {
   constructor (private readonly loadLastRankingRepository: LoadLastRankingRepository) {}
 
   async load (): Promise<RankingScore[]> {
-    if (new Date().getMonth() > 21) throw new RankingUnavailableError()
+    if (new Date().getMonth() > 22) throw new RankingUnavailableError()
 
     return this.loadLastRankingRepository.loadLastRanking()
   }
